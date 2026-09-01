@@ -8,7 +8,9 @@ function verificaopcao() {
     if (input_cliente.checked) {
         tela_cliente.style.display = "block";
         tela_restaurante.style.display = "none";
-    } else if (input_restaurante.checked) {
+    } 
+    
+    else if (input_restaurante.checked) {
         tela_cliente.style.display = "none";
         tela_restaurante.style.display = "block";
     }

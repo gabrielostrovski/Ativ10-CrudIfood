@@ -1,3 +1,7 @@
+<?php
+include '../infra/conexao.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,52 +18,53 @@
     <div>
         <h2>CADASTRO</h2>
 
-        <form action="cadastro">
+        <form action="public/salvar.php" method="POST"> 
             <label>Cadastrar como:</label>
 
             <br>
 
             <label>
-                <input type="radio" id="botao_cliente" name="tipo_usuario" value="cliente"> Cliente
+                <input type="radio" id="botao_cliente" name="tipo_usuario" value="cliente" onchange="verificaopcao()"> Cliente
             </label>
 
             <br>
 
              <label>
-                <input type="radio" id="botao_restaurante" name="tipo_usuario" value="restaurante"> Restaurante
+                <input type="radio" id="botao_restaurante" name="tipo_usuario" value="restaurante" onchange="verificaopcao()"> Restaurante
             </label>
 
             <div id="formulario_cliente" class="form">
                 
-            <h3>Cadastro de Cliente</h3>
+            <h3>Informações do Cliente</h3>
                 <label>Nome:</label>
-                <input type="text" name="nome" required>
+                <input type="text" name="nome_cliente">
                 <br>
                 <label>Email:</label>
-                <input type="email" name="email" required>
+                <input type="email" name="email_cliente">
                 <br>
                 <label>Telefone:</label>
-                <input type="tel" name="telefone" required>
+                <input type="tel" name="telefone_cliente">
                 <br>
                 <label>Endereço:</label>
-                <input type="text" name="endereco" required>
-
+                <input type="text" name="endereco_cliente">
+                <button type="submit">CADASTRAR</button>
             </div>
 
             <div id="formulario_restaurante" class="form">
-                <h3>Cadastro de Restaurante</h3>
+                <h3>Informações do Restaurante</h3>
                 <label>Nome:</label>
-                <input type="text" name="nome_restaurante" required>
+                <input type="text" name="nome_restaurante">
                 <br>
                 <label>Categoria:</label>
-                <input type="text" name="categoria" required>
+                <input type="text" name="categoria">
                 <br>
                 <label>Telefone:</label>
-                <input type="tel" name="telefone_restaurante" required>
+                <input type="tel" name="telefone_restaurante">
                 <br>
                 <label>Endereço:</label>
-                <input type="text" name="endereco_restaurante" required>
-
+                <input type="text" name="endereco_restaurante">
+                <button type="submit">CADASTRAR</button>
+            </div>
         </form>
     </div>
 </main>
